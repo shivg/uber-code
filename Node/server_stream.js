@@ -1,5 +1,5 @@
 var http = require("http");
-http.createServer(function(request, response) {
+var server = http.createServer(function(request, response) {
   response.writeHead(200, {"Content-Type": "text/plain"});
   request.on("data", function(chunk) {
     response.write(chunk.toString().toUpperCase());
@@ -7,4 +7,5 @@ http.createServer(function(request, response) {
   request.on("end", function() {
     response.end();
   });
-}).listen(8000);
+});
+server.listen(8000);
