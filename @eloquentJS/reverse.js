@@ -1,8 +1,9 @@
-var str = "Sharmi is Awesome"
-var reverse = [];
-var len=str.len;
-str.split("").map(function(char){
-reverse[len]=char;
-len -= 1
-});
-console.log(reverse)
+var str = "Sharmi"
+var reverse="";
+var len=str.length;
+for (i=len-1;i>=0;i--){
+  var x = str.split("");
+reverse =  reverse.concat(x[i]);
+  //console.log(str.split("")[i])
+}
+console.log(reverse);
