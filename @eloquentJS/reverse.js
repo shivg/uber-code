@@ -9,6 +9,6 @@ reverse =  reverse.concat(x[i]);
 console.log(reverse);
 var rev = "";
 for (i=len-1;i>=0;i--){
-rev = rev.concat(str.substr(i,1));
+rev += (str.substr(i,1));
 }
 console.log(rev);

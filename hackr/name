@@ -1,0 +1,5 @@
+var str = "sharmi is irritating";
+var result = str.split(" ").map(function (sub){
+return sub;
+});
+console.log(result.join(" yes "));
