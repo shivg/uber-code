@@ -14,7 +14,7 @@ function LetterChanges(str) {
       word+=str[i];
     }
   }
-  console.log(word)
+  console.log(word);
   return word;
 
 }
