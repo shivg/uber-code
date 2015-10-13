@@ -1,3 +1,12 @@
+function PrimeMover(num) {
+var count = 0, primeN = 0;
+while (count < num){
+  if (isPrime(primeN)){count +=1}
+  primeN+=1;
+}
+
+
+
 function isPrime(n){
   if (n <= 1) {return false;}
   else if (n <= 3) {return true;}
@@ -14,18 +23,8 @@ function isPrime(n){
   }
   return true;
 }
-
-console.log(isPrime(87178291199));
-//console.log("String".valueOf())
-
-function PrimeTime(num) {
-if (num <= 1){return false}
-  for (i=2;i*i<num;i++){
-  if (num % i == 0){return false}
-  }
-  return true;
+return primeN-1
 
 }
-console.log(PrimeTime(2));
 
-if (0){console.log("hahahah")}
+console.log(PrimeMover(100))

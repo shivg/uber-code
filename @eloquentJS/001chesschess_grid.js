@@ -1,7 +1,7 @@
 // Your code here.
 lineOne=" "
 lineTwo=""
-grid=Number(prompt("Pick a grid size"));
+grid= 8;
 for (iter=0;iter<(grid/2);iter++) {
   lineOne+= "# ";
   lineTwo+= "# ";
