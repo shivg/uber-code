@@ -18,7 +18,7 @@ function isPrime(n){
 console.log(isPrime(87178291199));
 //console.log("String".valueOf())
 
-function PrimeTime(num) {
+function Prime(num) {
 if (num <= 1){return false}
   for (i=2;i*i<num;i++){
   if (num % i == 0){return false}
@@ -26,6 +26,6 @@ if (num <= 1){return false}
   return true;
 
 }
-console.log(PrimeTime(2));
+console.log(Prime(87178291199));
 
 if (0){console.log("hahahah")}
