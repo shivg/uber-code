@@ -1,35 +1,55 @@
+var obj = {one : 10, two : 2, rest : 3, hehe: 4, "hahaha": " finally"}
+var arr = [1,2,3,100];
 
-function  each(collection,callback){
-  for (i=0;i<collection.length;i++){
-    callback(collection[i]);
-  }
-}
 
-function reduce(array,combine,startVal){
-  var result = startVal == undefined ? array[0] : startVal;
-  var array = startVal == undefined ? array.slice(1) : array;
+function reduce1(array,combine,startVal){
+  if (!Array.isArray(array)) { var props = keys(array) }
+ props = props || [0];
+  var result = startVal == undefined ? array[props[0]] : startVal;
+  if (Array.isArray(array)) {
+    startVal == undefined ? array.splice(0,1) : void 0;
+  } else startVal == undefined ? delete array[props[0]] : void 0;
+
   each(array,function (element){
- //if (startVal == undefined && element == array[0]) {result = 0}
  result = combine(result,element);
 });
 return result;
 }
 
-var arr = [1,2,3,5,1,5,2,100];
+//sharmi **
+function reduce(array,combine,startVal){
+  var result;
+  if (!Array.isArray(array)) {
+    var props = keys(array);
+     startVal == undefined ? (result = array[props[0]] , delete array[props[0]]) : result=startVal;
+  }else{
+     startVal == undefined ? (result = array[0], array.splice(0,1)) : result =startVal;
+  }
+  each(array,function (element){
+  result = combine(result,element);
+});
+return result;
+}
+
 var add = function (a,b){
   return a+b;
 };
 
-//console.log(reduce(arr,add));
+console.log(reduce(arr,add));
+
+
+
+
+
+
 var max = function (a,b,index){
-  j = a > b ? index-1 : index
   return a>b ? a : b;
 }
 
 
 function sort(array){
   var l = array.length, sorted = [];
-  for (i=0;i<l;i++){
+  for (var i=0;i<l;i++){
     var m = array.reduce(max);
     sorted.push(m);
     array.splice(array.indexOf(m),1);
@@ -45,35 +65,26 @@ console.log(sort(arr));
 
 
 
+function keys(obj){
+  var result = [];
+  for (var key in obj){
+     obj.hasOwnProperty(key) ? result.push(key) : void 0;
+  }
+  return result;
+}
 
+//each(obj,function (element){console.log(element)});
 
-
-if (!Array.prototype.reduce) {
-  Array.prototype.reduce = function(callback /*, initialValue*/) {
-    'use strict';
-    if (this == null) {
-      throw new TypeError('Array.prototype.reduce called on null or undefined');
+function each(collection,callback){
+  if (Array.isArray(collection)) {
+    for (var i=0;i<collection.length;i++){
+      callback(collection[i]);
     }
-    if (typeof callback !== 'function') {
-      throw new TypeError(callback + ' is not a function');
+  } else {
+    var props = keys(collection);
+    for (var j = 0;j<props.length;j++){
+      callback(collection[props[j]]);
     }
-    var t = Object(this), len = t.length >>> 0, k = 0, value;
-    if (arguments.length == 2) {
-      value = arguments[1];
-    } else {
-      while (k < len && !(k in t)) {
-        k++;
-      }
-      if (k >= len) {
-        throw new TypeError('Reduce of empty array with no initial value');
-      }
-      value = t[k++];
-    }
-    for (; k < len; k++) {
-      if (k in t) {
-        value = callback(value, t[k], k, t);
-      }
-    }
-    return value;
-  };
+  }
+ return collection;
 }
