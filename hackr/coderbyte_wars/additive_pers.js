@@ -16,3 +16,11 @@ function AdditivePersistence(num) {
 }
 
 console.log(AdditivePersistence(99999))
+
+var arr = ['w', 'y', 'k', 'o', 'p'];
+// your browser must support for..of loop
+// and let-scoped variables in for loops
+var l;
+for (let l of arr) {
+  console.log(letter);
+}
