@@ -14,3 +14,8 @@ function RunLength(str){
 }
 
 console.log(RunLength("hhaaboohoobaaaabbccseer"))
+
+var obj = {};
+obj.x = obj;
+
+console.log(obj.x)
