@@ -38,7 +38,7 @@ var forEach = function (collection,callback){
   var filResult = filter(array,function (element){
     return element > 3;
   });
-  console.log(filResult);
+  //console.log(filResult);
 
 
   var reduce =  function (collection,combine, startVal){
@@ -61,9 +61,9 @@ var forEach = function (collection,callback){
 
 
   var array = [1,2,3,4,5,6]
-  console.log(reduceFor(array,function (a,b){
-    return a+b;
-  },0));
+//  console.log(reduceFor(array,function (a,b){
+//    return a+b;
+ // },0));
 
   var reject = function (collection,callback){
     var result = [];
@@ -79,4 +79,4 @@ var array = [1,2,3,4,5,6]
 var ans = reject(array,function (element){
   return element > 3;
 });
-console.log(ans);
+//console.log(ans);

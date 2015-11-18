@@ -42,21 +42,28 @@ var reduceEach = function (collection,combine,startVal){
 } **/
 
 var reduceAll =  function (coll,accum,startVal){
+    function keys(obj){
+    var result = [];
+    for (prop in obj){
+    obj.hasOwnProperty(prop) ? result.push(prop) : void 0;
+    }
+    return result;
+    }
     var result, i=0, props;
     if (Array.isArray(coll)){
     result = startVal || coll[0]
-  } else {
+    } else {
     props = keys(coll)
     result = startVal || coll[props[0]];
-  }
+    }
     startVal == undefined ? i=1 : void 0;
 
     each(coll, function (element){
     if (i !==0) {i=0 ; return}
     result = accum(result,element);
-  });
+    });
     return result;
-}
+    }
 
 
 function keys(obj){
@@ -88,4 +95,4 @@ function add(a,b){
 var a = [1,2,3,4,5];
 var o = {a:1,b:2,c:3,d:4}
 
-console.log(reduceAll(o,add));
+console.log(reduceAll(a,add));
