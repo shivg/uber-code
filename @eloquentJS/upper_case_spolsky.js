@@ -9,3 +9,5 @@ return console.log("First letter was not capitalized");
 }
 "Edit in original dir"
 upperStr("1harmi")
+
+"Hello" 
