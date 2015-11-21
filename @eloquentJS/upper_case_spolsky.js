@@ -11,3 +11,5 @@ return console.log("First letter was not capitalized");
 upperStr("1harmi")
 
 "Hello" 
+
+"Added some more lines"
