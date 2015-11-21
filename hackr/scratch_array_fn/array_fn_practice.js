@@ -74,7 +74,7 @@ function keys(obj){
     return result;
 }
 
-function each(collection,callback){
+function eaœch(collection,callback){
   if (Array.isArray(collection)) {
     for (var i=0;i<collection.length;i++){
       callback(collection[i],i);
@@ -88,7 +88,7 @@ function each(collection,callback){
  return collection;
 }
 
-function add(a,b){
+function adœd(a,b){
   return a+b;
 }
 

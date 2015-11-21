@@ -7,5 +7,5 @@ return console.log("First letter was not capitalized");
 } else {return console.log("The first letter is not an alphabet");}
 
 }
-
+"Edit in original dir"
 upperStr("1harmi")
