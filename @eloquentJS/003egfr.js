@@ -12,6 +12,3 @@
 
 console.log(gfr(1.1,32,'',"female"))
 console.log(Math.sqrt(2)*(Math.sqrt(2)));
-
-
-console.log(Math.floor(Math.random()*10))
