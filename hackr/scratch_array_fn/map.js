@@ -13,7 +13,7 @@
 
 
     function keys (obj){
-    var result = [];;
+    var result = [];
     for (var prop in obj){
       obj.hasOwnProperty(prop) ? result.push(prop) : void 0
     }

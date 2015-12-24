@@ -19,3 +19,6 @@ Array.prototype.unique = function() {
 }
 
 console.log(SecondGreatLow([2, 2,2,42, 42, 180]));
+
+var r = [1,2,2,3,24,3,453,5,55,65,,6,57677,7,7,7,878,8].unique();
+console.log(r)
