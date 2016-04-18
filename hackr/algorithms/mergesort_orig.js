@@ -31,4 +31,4 @@ function merge(left, right)
     return result;
 }
 
-mergeSort([2,6,8,45,67,2,4,46,78,43,12]);
+console.log(mergeSort([2,6,8,45,67,2,4,46,78,43,12]));
