@@ -28,9 +28,9 @@ fs.readFile(filename, 'utf8', function(err, data) {
 
 function makeBookmarkPage(txt){
   var obj = (JSON.parse(txt));
-  var urls = obj.tabs.reduce(function  (p,n) {
+  var urls = obj.tabs.reduce(function (p,n) {
   	return p+"<a href='"+n.url+"'>"+n.url+"</a><p>\n";
-  },"<p>Bookmarks\n");
+  },"<p>Bookmarks\n</p><br>");
   return urls;
 }
 
