@@ -1,7 +1,6 @@
 function mergeSort(arr) {
 
 if (arr.length <2){return arr}
-console.log("arr val "+arr);
 var middle = parseInt(arr.length / 2);
 var left = arr.slice(0, middle);
 var right = arr.slice(middle, arr.length);
@@ -11,7 +10,6 @@ return merge (mergeSort(left),mergeSort(right));
 }
 
 function merge(left,right){
- console.log("inside merge left and right "+left+" "+right);
   var result = [];
   while(left.length && right.length){
     if (left[0] <= right[0]){
@@ -26,7 +24,6 @@ function merge(left,right){
   while(right.length){
     result.push(right.shift());
   }
-  //console.log(result.toString());
 return result;
 
 }
